@@ -1,0 +1,7 @@
+{
+  "reconnect": {
+    "maxAttempts": 5,
+    "intervalSeconds": 10
+  },
+  "logFile": "bot-runtime.log"
+}
