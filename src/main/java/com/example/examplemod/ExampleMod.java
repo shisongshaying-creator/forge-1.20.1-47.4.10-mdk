@@ -1,5 +1,7 @@
 package com.example.examplemod;
 
+import com.example.examplemod.config.KnowledgePackLoader;
+import com.example.examplemod.config.RuntimeConfigLoader;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -36,6 +38,8 @@ public class ExampleMod
     public static final String MODID = "examplemod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
+    public static RuntimeConfigLoader.RuntimeConfig RUNTIME_CONFIG;
+    public static KnowledgePackLoader.KnowledgePack KNOWLEDGE_PACK;
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
@@ -86,6 +90,8 @@ public class ExampleMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        RUNTIME_CONFIG = RuntimeConfigLoader.load(LOGGER);
+        KNOWLEDGE_PACK = KnowledgePackLoader.load(LOGGER);
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
 
