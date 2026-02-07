@@ -1,0 +1,35 @@
+{
+  "connection": {
+    "mode": "offline",
+    "endpoint": "ws://localhost:8080",
+    "timeoutMs": 5000,
+    "retry": {
+      "maxAttempts": 3,
+      "backoffMs": 1000
+    }
+  },
+  "conversation": {
+    "historyLimit": 20,
+    "systemPrompt": "",
+    "locale": "ja-JP"
+  },
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "maxTokens": 1024
+  },
+  "action": {
+    "enabled": true,
+    "allowedActions": [
+      "npc_talk",
+      "item_scan"
+    ],
+    "cooldownMs": 500
+  },
+  "safety": {
+    "allowUnsafe": false,
+    "redactPii": true,
+    "maxRequestsPerMinute": 60
+  }
+}

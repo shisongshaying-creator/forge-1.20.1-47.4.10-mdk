@@ -1,0 +1,21 @@
+{
+  "pack": {
+    "id": "vanilla",
+    "name": "Vanilla Knowledge",
+    "version": "1.0.0",
+    "description": "Minecraft vanilla knowledge pack"
+  },
+  "entries": [
+    {
+      "id": "example-wood",
+      "title": "Wood basics",
+      "tags": [
+        "materials",
+        "crafting"
+      ],
+      "content": "Wood can be obtained from trees and used to craft planks.",
+      "source": "vanilla",
+      "enabled": true
+    }
+  ]
+}
